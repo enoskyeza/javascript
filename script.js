@@ -6,14 +6,21 @@
 // add function that increments, and create it in js
 // change the count-el in html to reflect the new count
 
+let saveEl = document.getElementById("save-el")
 let countEl = document.getElementById("count-el")
-// console.log(countEl)
-
-let count=0;
+let count=0
 
 function increment() {
     count++
     countEl.innerText=count
+}
+
+function save() {
+    let newEntry= count + " - "
+    saveEl.textContent += newEntry
+    countEl.innerText= 0
+    count = 0
+
 }
 
 // my logger task
