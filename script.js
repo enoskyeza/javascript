@@ -1,14 +1,19 @@
+// document.getElementById("count-el").innerText = 5
 
+// The DOM - Document Object Model
 // initialize the count as 0
 // listen for clicks on the click button
 // add function that increments, and create it in js
 // change the count-el in html to reflect the new count
 
+let countEl = document.getElementById("count-el")
+// console.log(countEl)
+
 let count=0;
 
-
 function increment() {
-    document.getElementById("count-el").innerText = count++
+    count++
+    countEl.innerText=count
 }
 
 // my logger task
@@ -30,3 +35,17 @@ function increment() {
 // }
 
 // lap_adder()
+
+// Lap_increment task
+
+// let raceLap = 0;
+
+// function lap_increment() {
+//     raceLap++
+// }
+
+// lap_increment()
+// lap_increment()
+// lap_increment()
+
+// console.log(raceLap)
