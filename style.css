@@ -36,3 +36,9 @@ button {
     background: darkgreen;
 }
 
+.back-blur {
+    background: rgba(255,255,255, 0.7);
+    height: 100%;
+    padding-top: 40%;
+
+}
