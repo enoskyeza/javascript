@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <h2>Fibonacci Strategy</h2>
+    <input type="number" id="fibonacci-starting-balance" placeholder="Starting Balance">
+    <button onclick="startFibonacciGame()">Start Game</button>
+    <input type="number" id="fibonacci-bet-amount" placeholder="Bet Amount">
+    <button onclick="betFibonacci()">Bet</button>
+    <button class="win" onclick="winFibonacci()">Win</button>
+    <button class="lose" onclick="loseFibonacci()">Lose</button>
+    <button onclick="stopGame('fibonacci')">Stop Game</button>
+    <p>Balance: <span id="fibonacci-balance">0</span></p>
+
+    <h3>Transactions</h3>
+    <table id="fibonacci-transactions">
+      <thead>
+        <tr>
+          <th>Round Number</th>
+          <th>Status</th>
+          <th>Bet Amount</th>
+          <th>Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Transaction rows will be added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="calculator">
+    <h2>Neo-Martingale Strategy</h2>
+    <input type="number" id="neo-starting-balance" placeholder="Starting Balance">
+    <button onclick="startNeoMartingaleGame()">Start Game</button>
+    <input type="number" id="neo-bet-amount" placeholder="Bet Amount">
+    <button onclick="betNeoMartingale()">Bet</button>
+    <button class="win" onclick="winNeoMartingale()">Win</button>
+    <button class="lose" onclick="loseNeoMartingale()">Lose</button>
+    <button onclick="stopGame('neo')">Stop Game</button>
+    <p>Balance: <span id="neo-balance">0</span></p>
+
+    <h3>Transactions</h3>
+    <table id="neo-transactions">
+      <thead>
+        <tr>
+          <th>Round Number</th>
+          <th>Status</th>
+          <th>Bet Amount</th>
+          <th>Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Transaction rows will be added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

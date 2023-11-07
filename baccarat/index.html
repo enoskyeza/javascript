@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mock Baccarat Game</title>
+</head>
+<body>
+    <h1>Mock Baccarat Game</h1>
+    <div class="seats" style="display: flex; justify-content: space-around;">
+        <!-- Seat 1 -->
+        <div class="seat" id="seat1">
+            <div class="container">
+                <label for="balancePlayer1">Enter Player 1's balance:</label>
+                <input type="number" id="balancePlayer1" placeholder="Enter Player's balance">
+                <button id="startButton1">Start Game</button>
+            </div>
+            <div class="game">
+                <div class="player-section">
+                    <h2>Player</h2>
+                    <button id="playerBet1">Bet 1000</button>
+                    <button id="playerDouble1">Double</button>
+                    <button id="playerWin1">Win</button>
+                    <button id="playerLose1">Lose</button>
+                    <p>Balance: <span id="currentBalancePlayer1">0</span></p>
+                    <p>Wins: <span id="winsPlayer1">0</span></p>
+                    <p>Losses: <span id="lossesPlayer1">0</span></p>
+                    <p>Current Bet: <span id="currentBet1">0</span></p>
+                </div>
+                <div class="dealer-section">
+                    <h2>Dealer</h2>
+                    <button id="dealerWin1">Win</button>
+                    <button id="dealerLose1">Lose</button>
+                    <p>Balance: <span id="currentBalanceDealer1">0</span></p>
+                    <p>Wins: <span id="winsDealer1">0</span></p>
+                    <p>Losses: <span id="lossesDealer1">0</span></p>
+                </div>
+                <div class="tie-section">
+                    <h2>Tie</h2>
+                    <button id="tie1">Tie</button>
+                </div>
+                <button id="resetGame1">Reset Game</button>
+            </div>
+        </div>
+
+        <!-- Seat 2 -->
+        <div class="seat" id="seat2">
+            <div class="container">
+                <label for="balancePlayer2">Enter Player 2's balance:</label>
+                <input type="number" id="balancePlayer2" placeholder="Enter Player's balance">
+                <button id="startButton2">Start Game</button>
+            </div>
+            <div class="game">
+                <div class="player-section">
+                    <h2>Player</h2>
+                    <button id="playerBet2">Bet 1000</button>
+                    <button id="playerDouble2">Double</button>
+                    <button id="playerWin2">Win</button>
+                    <button id="playerLose2">Lose</button>
+                    <p>Balance: <span id="currentBalancePlayer2">0</span></p>
+                    <p>Wins: <span id="winsPlayer2">0</span></p>
+                    <p>Losses: <span id="lossesPlayer2">0</span></p>
+                    <p>Current Bet: <span id="currentBet2">0</span></p>
+                </div>
+                <div class="dealer-section">
+                    <h2>Dealer</h2>
+                    <button id="dealerWin2">Win</button>
+                    <button id="dealerLose2">Lose</button>
+                    <p>Balance: <span id="currentBalanceDealer2">0</span></p>
+                    <p>Wins: <span id="winsDealer2">0</span></p>
+                    <p>Losses: <span id="lossesDealer2">0</span></p>
+                </div>
+                <div class="tie-section">
+                    <h2>Tie</h2>
+                    <button id="tie2">Tie</button>
+                </div>
+                <button id="resetGame2">Reset Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

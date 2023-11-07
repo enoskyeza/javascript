@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.game {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 18px;
+}
+
+span {
+    font-weight: bold;
+}
