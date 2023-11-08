@@ -16,7 +16,7 @@ Blackjack App Recap
     - Arrays
         * create arrays
         * reassign arrays
-        * push method
+        * push, pop, shift, unshift
     - objects
         * creating objects(key/value pairs)
         * items in objects
