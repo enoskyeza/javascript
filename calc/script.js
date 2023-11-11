@@ -1,7 +1,6 @@
 let displayEl = document.getElementById('display')
 let calcHistory = []
 let oprHistory = ''
-// let buttonEl = document.getElementById('button-el')
 
 function numButton(element) {
     displayEl.value += element.innerText
@@ -13,12 +12,12 @@ function numButton(element) {
     console.log(calcHistory)
 }
 
-function oprButton(element) {
-    // displayEl.value += element.innerText
+function oprButtone(element) {
     console.log('Button content: ' + element.innerText)
 
     if (element.innerText === "←") {
         console.log('Yeap thats the backspace!')
+        displayEl.value.pop()
     } else if (element.innerText === "C/E" || element.innerText === "C" ) {
          displayEl.value = ''
     } else if (element.innerText === "+") {
@@ -84,3 +83,66 @@ function subNum(num1, num2){
 // })
 
 
+function oprButton(element) {
+    console.log('Button content: ' + element.innerText);
+
+    if (element.innerText === "←") {
+        displayEl.value = displayEl.value.slice(0, -1);
+    } else if (element.innerText === "C/E" || element.innerText === "C") {
+        displayEl.value = '';
+    } else {
+        // Handle operators using a switch statement
+        switch (element.innerText) {
+            case "+":
+                handleOperator("+");
+                break;
+            case "-":
+                handleOperator("-");
+                break;
+            case "*":
+                handleOperator("*");
+                break;
+            case "/":
+                handleOperator("/");
+                break;
+            case "=":
+                if (calcHistory.length === 2 && oprHistory) {
+                    calculateResult();
+                }
+                break;
+            default:
+                console.log('Invalid operation');
+        }
+    }
+}
+
+function handleOperator(operator) {
+    if (oprHistory) {
+        console.log('An operator is already set');
+    } else {
+        calcHistory.push(parseFloat(displayEl.value));
+        displayEl.value = '';
+        oprHistory = operator;
+    }
+}
+
+function calculateResult() {
+    let result;
+    switch (oprHistory) {
+        case "+":
+            result = sumNum(calcHistory[0], calcHistory[1]);
+            break;
+        case "-":
+            result = subNum(calcHistory[0], calcHistory[1]);
+            break;
+        case "/":
+            result = divNum(calcHistory[0], calcHistory[1]);
+            break;
+        case "*":
+            result = multNum(calcHistory[0], calcHistory[1]);
+            break;
+    }
+    displayEl.value = result;
+    calcHistory = [];
+    oprHistory = '';
+}
