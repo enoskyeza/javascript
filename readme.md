@@ -33,3 +33,17 @@ Blackjack App Recap
     - Math object with its methods
     - return statements
 
+Chrome Extension Recap
+    - Use of const when declaring variables
+    - DOM
+        * addEventListener
+        * innerHTML
+        * input.value
+    - Function parameters (make funcs reusable)
+    - template strings (like string formating in python)
+    - localstorage
+    - JSON object
+        * JSON.parse
+        * JSON.stringify
+    - objects in arrays
+
