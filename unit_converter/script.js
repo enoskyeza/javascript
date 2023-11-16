@@ -3,15 +3,20 @@ let lengthEl = document.getElementById('length')
 let massEl = document.getElementById('mass')
 let volumeEl = document.getElementById('volume')
 
-function valueConvert(){
-    let typedText = inputEl.value
-    let lengthConvert = `${typedText} meters = ${meterToFeet(typedText)} feet | ${typedText} feet = ${footToMeter(typedText)} meters`
-    let volumeConvert = `${typedText} liters = ${litreToGallon(typedText)} gallons | ${typedText} gallons = ${gallonToLitre(typedText)} liters`
-    let massConvert = `${typedText} kilos = ${kilogramsToPounds(typedText)} pounds | ${typedText} pounds = ${poundToKilogram(typedText)} kilos`
 
-    lengthEl.textContent = lengthConvert
-    massEl.textContent = massConvert
-    volumeEl.textContent = volumeConvert
+function valueConvert(){
+    const typedText = inputEl.value
+    if (/^\d*\.?\d*$/.test(typedText)) {
+        let lengthConvert = `${typedText} meters = ${meterToFeet(typedText)} feet | ${typedText} feet = ${footToMeter(typedText)} meters`
+        let volumeConvert = `${typedText} liters = ${litreToGallon(typedText)} gallons | ${typedText} gallons = ${gallonToLitre(typedText)} liters`
+        let massConvert = `${typedText} kilos = ${kilogramsToPounds(typedText)} pounds | ${typedText} pounds = ${poundToKilogram(typedText)} kilos`
+
+        lengthEl.textContent = lengthConvert
+        massEl.textContent = massConvert
+        volumeEl.textContent = volumeConvert
+    } else {
+        alert('Please enter a valid number.'); // Display alert for non-numeric input
+    }
 }
 
 function meterToFeet(meter) {
