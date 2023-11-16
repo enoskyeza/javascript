@@ -110,6 +110,23 @@ input[type="text"]{
     text-align: center;
 }
 
+#copyIcon {
+    margin-left: auto;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: rgba(15, 22, 55, 0.241);
+    width: 50px;
+    border-radius: 0 6px 6px 0;
+}
+
+#copyicon:hover {
+    cursor: pointer;
+    background: rgba(29, 35, 67, 0.241);
+}
+
 hr{
     background: var(--grey-700);
     height: 1px;

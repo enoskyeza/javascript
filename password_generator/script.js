@@ -35,3 +35,30 @@ generateBtn.addEventListener('click', function(){
         optionFour.textContent = generatePassword(10)
     }
 })
+
+
+// // Function to copy generated password to clipboard
+// function copyPasswordToClipboard() {
+//     const generatedPassword = optionOne.textContent;
+
+//     // Create a temporary textarea to hold the password text
+//     const tempTextarea = document.createElement('textarea');
+//     tempTextarea.value = generatedPassword;
+
+//     // Append the textarea to the document
+//     document.body.appendChild(tempTextarea);
+
+//     // Select the password text and copy it to the clipboard
+//     tempTextarea.select();
+//     document.execCommand('copy');
+
+//     // Remove the temporary textarea from the document
+//     document.body.removeChild(tempTextarea);
+
+//     // Notify the user that the password has been copied (you can modify this part)
+//     alert('Password has been copied to clipboard');
+// }
+
+// Get the copy icon element and add click event listener
+const copyIcon = document.getElementById('copyIcon');
+copyIcon.addEventListener('click', copyPasswordToClipboard);
