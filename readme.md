@@ -1,4 +1,4 @@
-This is my java script course.
+This is my java script course Recap and projects Repository.
 
 Counter App Recap
     - Script tags
