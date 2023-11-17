@@ -24,11 +24,16 @@ addButtonEl.addEventListener('click', function(){
 
 onValue(shoppingListInDB, function(snapshot){
     clearDOMListEl(shoppingList)
-    let itemsArray = Object.entries(snapshot.val())
 
-    for (let i=0; i<itemsArray.length; i++) {
-        renderToDOM(shoppingList, itemsArray[i])
+    if (snapshot.val()){
+        let itemsArray = Object.entries(snapshot.val())
+        for (let i=0; i<itemsArray.length; i++) {
+            renderToDOM(shoppingList, itemsArray[i])
+        }
+    } else {
+        console.log('Database is empty')
     }
+
 })
 
 function resetInput(input) {
