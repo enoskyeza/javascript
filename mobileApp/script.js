@@ -11,9 +11,10 @@ const shoppingListInDB = ref(database, "shoppingList")
 
 let inputFieldEl = document.getElementById('input-field')
 const popupMessageEl = document.getElementById('popup-message');
-let timerId
 const addButtonEl = document.getElementById('add-button')
 let shoppingList = document.getElementById('shopping-list')
+let cartEl = document.getElementById('cart-container')
+let timerId
 
 
 
@@ -45,6 +46,7 @@ onValue(shoppingListInDB, function(snapshot){
             renderToDOM(shoppingList, itemsArray[i])
         }
     } else {
+        emptyCartDOM(cartEl)
         console.log('Database is empty')
     }
 
@@ -75,6 +77,14 @@ function renderToDOM(dom, item) {
 
 }
 
+function emptyCartDOM(dom) {
+    let newElImg = document.createElement('img')
+
+    newElImg.src = "assets/empty_cart.svg"
+    newElImg.classList.add()
+    dom.appendChild(newElImg)
+}
+
 function clearDOMListEl(dom) {
     dom.innerHTML = ""
 }
@@ -83,7 +93,6 @@ function removeDBItem(id) {
     let dbItemLocation = ref(database, `shoppingList/${id}`)
     remove(dbItemLocation)
 }
-
 
 
 // Refactored code below
@@ -116,3 +125,7 @@ function removeDBItem(id) {
 //     }
 
 // })
+
+
+{/* <img src="assets/empty_cart.svg" alt="">
+<p>Cart is empty, add something!!</p> */}

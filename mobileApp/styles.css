@@ -96,3 +96,21 @@ ul li {
 .popup-message.show {
     opacity: 1; /* When the 'show' class is added, set opacity to 1 */
 }
+
+/* .empty-database {
+    align-items: center;
+    padding-top: 30px;
+    color: rgb(192, 192, 192);
+} */
+
+#cart-container  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cart-container img {
+    margin-left: auto;
+    width: 250px;
+    opacity: 0.6;
+}
