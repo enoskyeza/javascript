@@ -10,15 +10,29 @@ const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shoppingList")
 
 let inputFieldEl = document.getElementById('input-field')
+const popupMessageEl = document.getElementById('popup-message');
+let timerId
 const addButtonEl = document.getElementById('add-button')
-const addDblButtonEl = document.getElementById('double-add-button')
 let shoppingList = document.getElementById('shopping-list')
 
 
+
 addButtonEl.addEventListener('click', function(){
-    let inputValue = inputFieldEl.value
-    push(shoppingListInDB, inputValue)
-    resetInput(inputFieldEl)
+    let inputValue = inputFieldEl.value.trim()
+
+    if (inputValue === '') {
+        popupMessageEl.classList.add('show');
+
+        clearTimeout(timerId);
+
+        timerId = setTimeout(function() {
+            popupMessageEl.classList.remove('show') ;
+        }, 2000); // 3000 milliseconds = 3 seconds
+
+    } else {
+        push(shoppingListInDB, inputValue)
+        resetInput(inputFieldEl)
+    }
 
 })
 
@@ -70,3 +84,35 @@ function removeDBItem(id) {
     remove(dbItemLocation)
 }
 
+
+
+// Refactored code below
+
+// // Empty innput Validation using the display: none property
+
+// inputFieldEl.addEventListener('input', function() {
+//     // Hide the popup message when User starts typing
+//     if (inputFieldEl.value.trim() !== '') {
+//         popupMessageEl.style.display = 'none';
+//     }
+// });
+
+// addButtonEl.addEventListener('click', function(){
+//     let inputValue = inputFieldEl.value.trim()
+
+//     if (inputValue === '') {
+//         popupMessageEl.style.display = 'block';
+
+//         // Clear any existing timer before starting a new one
+//         clearTimeout(timerId);
+
+//         // Set a timer to hide the popup message after 3 seconds (adjust the time as needed)
+//         timerId = setTimeout(function() {
+//             popupMessageEl.style.display = 'none';
+//         }, 1500); // 3000 milliseconds = 3 seconds
+//     } else {
+//         push(shoppingListInDB, inputValue)
+//         resetInput(inputFieldEl)
+//     }
+
+// })
