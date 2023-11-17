@@ -103,14 +103,14 @@ ul li {
     color: rgb(192, 192, 192);
 } */
 
-#cart-container  {
+/* #cart-container  {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 #cart-container img {
     margin-left: auto;
     width: 250px;
-    opacity: 0.6;
+    opacity: 0.5;
 }

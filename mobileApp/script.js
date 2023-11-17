@@ -46,7 +46,7 @@ onValue(shoppingListInDB, function(snapshot){
             renderToDOM(shoppingList, itemsArray[i])
         }
     } else {
-        emptyCartDOM(cartEl)
+        emptyCartDOM(shoppingList)
         console.log('Database is empty')
     }
 
