@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://playground-eaa33-default-rtdb.europe-west1.firebasedatabase.app/"
@@ -13,12 +13,12 @@ const storiesEl = document.getElementById("stories")
 
 onValue(newsStoriesInDB, function(snapshot) {
     let newsStoriesArray = Object.entries(snapshot.val())
-    
+
     storiesEl.innerHTML = ""
-    
+
     for (let i = 0; i < newsStoriesArray.length; i++) {
         let currentStory = newsStoriesArray[i]
-        
+
         appendStoryToStoriesEl(currentStory)
     }
 })
@@ -26,16 +26,19 @@ onValue(newsStoriesInDB, function(snapshot) {
 function appendStoryToStoriesEl(story) {
     let storyID = story[0]
     let storyTitle = story[1]
-    
+
     let newEl = document.createElement("div")
-    
+
     newEl.classList.add("story")
-    
+
     newEl.textContent = storyTitle
-    
+
     newEl.addEventListener("dblclick", function() {
-        
+        let dbIDlocation = ref(database, 'newsStories')
+
+        console.log(storyID)
+        remove(dbIDlocation)
     })
-    
+
     storiesEl.append(newEl)
 }
