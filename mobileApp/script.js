@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push}  from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue}  from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://realtime-database-8cc97-default-rtdb.europe-west1.firebasedatabase.app/"
@@ -15,10 +15,20 @@ let shoppingList = document.getElementById('shopping-list')
 
 addButtonEl.addEventListener('click', function(){
     let inputValue = inputFieldEl.value
-    // push(shoppingListInDB, inputValue)
-    renderToDOM(shoppingList, inputValue)
+    push(shoppingListInDB, inputValue)
     resetInput(inputFieldEl)
 
+})
+
+onValue(shoppingListInDB, function(snapshot){
+    clearDOMListEl(shoppingList)
+    let itemsArray = Object.entries(snapshot.val())
+
+    for (let i=0; i<itemsArray.length; i++) {
+        let currentItemID = itemsArray[i][0]
+        let currentItemValue = itemsArray[i][1]
+        renderToDOM(shoppingList, currentItemValue)
+    }
 })
 
 function resetInput(input) {
@@ -27,11 +37,9 @@ function resetInput(input) {
 
 function renderToDOM(dom, value) {
     dom.innerHTML += `<li>${value}</li>`
-
 }
 
-// function renderList(list) {
-//     for (let i=o; i<list.length; i++) {
+function clearDOMListEl(dom) {
+    dom.innerHTML = ""
+}
 
-//     }
-// }
