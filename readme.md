@@ -47,3 +47,10 @@ Chrome Extension Recap
         * JSON.stringify
     - objects in arrays
 
+Shoping mobile web app
+    - Import
+        * From firebase (initializeApp, getDatabase, ref, push, onValue, remove)
+    - create elements using the documment.createElement('li/img/p')
+        give element properties, append to parent
+    - User select for userinterface
+    - Web Application Manifest file
